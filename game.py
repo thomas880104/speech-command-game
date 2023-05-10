@@ -77,9 +77,9 @@ def main_menu():
     while True:
         win.fill((0, 0, 0))
         win.blit(background, (0, 0))
-        win.blit(logoImg, (275, 60))
-        win.blit(startImg, (300,300))
-        button_start = pygame.Rect(300,300,200,131)
+        win.blit(logoImg, (250, 60))
+        win.blit(startImg, (320,300))
+        button_start = pygame.Rect(320,300,200,131)
         
         mx, my = pygame.mouse.get_pos()
 
@@ -109,7 +109,7 @@ def mode_menu():
         win.blit(engImg, (150, 250))
         win.blit(zhImg, (350,250))
         win.blit(minnanImg, (550, 250))
-        win.blit(modeImg, (350, 100))
+        win.blit(modeImg, (290, 100))
 
         button_eng    = pygame.Rect(150,250,150,150)
         button_zh     = pygame.Rect(350,250,150,150)
