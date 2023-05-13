@@ -37,7 +37,7 @@ startImg   = pygame.image.load('menu/Start.png')
 modeImg    = pygame.image.load('menu/Mode.png')
 engImg     = pygame.image.load('menu/eng.png')
 zhImg      = pygame.image.load('menu/zh.png')
-minnanImg  = pygame.image.load('menu/mi.png')
+taiImg  = pygame.image.load('menu/tai.png')
 bulletImg  = pygame.image.load('ele/Shuriken.png')
 appleImg   = pygame.image.load('ele/apple.png')
 
@@ -108,12 +108,12 @@ def mode_menu():
         win.blit(background, (0, 0))
         win.blit(engImg, (150, 250))
         win.blit(zhImg, (350,250))
-        win.blit(minnanImg, (550, 250))
+        win.blit(taiImg, (550, 250))
         win.blit(modeImg, (290, 100))
 
         button_eng    = pygame.Rect(150,250,150,150)
         button_zh     = pygame.Rect(350,250,150,150)
-        button_minnan = pygame.Rect(550,250,150,150)
+        button_tai = pygame.Rect(550,250,150,150)
 
         mx, my = pygame.mouse.get_pos()
 
@@ -136,9 +136,9 @@ def mode_menu():
         if button_zh.collidepoint((mx,my)):
             if click:
                 speech_game_loop(lan='zh')
-        if button_minnan.collidepoint((mx,my)):
+        if button_tai.collidepoint((mx,my)):
             if click:
-                speech_game_loop(lan='minnan')
+                speech_game_loop(lan='tai')
 
         pygame.display.update()
 
@@ -149,8 +149,8 @@ def speech_game_loop(lan = 'eng'):
         import ryRecog06_eng as rec
     elif lan == 'zh':
         import ryRecog06_TW as rec
-    elif lan == 'minnan':
-        import ryRecog06_minnan as rec
+    elif lan == 'tai':
+        import ryRecog06_tai as rec
 
     #inital setting
     playerX = 370
